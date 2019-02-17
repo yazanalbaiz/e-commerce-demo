@@ -9,6 +9,8 @@ import Store from './Store';
 
 import './static/css/main.css';
 import './static/css/reset.css';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 ReactDOM.render(
 	<Provider store={Store}>
