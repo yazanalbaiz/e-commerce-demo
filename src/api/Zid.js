@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const port = 8000;
+export const port = 3001;
 
 export default axios.create({
     baseURL: `http://localhost:${port}`,
