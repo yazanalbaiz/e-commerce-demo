@@ -1,0 +1,29 @@
+.ShopNav {
+    margin-bottom: 1rem;
+}
+
+.ShopNav_cart-button {
+    height: 50px;
+    width: 50px;
+}
+
+.ShopNav_image {
+    width: 40px !important;
+    height: 40px !important;
+}
+
+.test-round {
+    width: 20px;
+    border-radius: 13px;
+    background-color: white;
+    color: blue;
+    font-size: 13px;
+    z-index: 2;
+    position: relative;
+    height: 20px;
+    text-align: center;
+    top: -14px;
+    right: -10px;
+    font-weight: bolder;
+}
+

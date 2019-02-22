@@ -8,7 +8,7 @@ import App from './components/App';
 import Store from './Store';
 
 import './static/css/main.css';
-import './static/css/reset.css';
+//import './static/css/reset.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 

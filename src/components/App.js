@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import { toast, ToastContainer } from 'react-toastify';
-
+import { Switch, Route } from 'react-router-dom';
+import Home from '../containers/Home';
+import Cart from '../containers/Cart';
 
 class App extends Component {
   render() {
-    toast('Item Added');
     return (
       <div>
-        <ToastContainer />
+        <Switch>
+          <Route exact path="/cart" component={Cart} />
+          <Route exact path="/" component={Home} />
+        </Switch>
       </div>
     );
   }
