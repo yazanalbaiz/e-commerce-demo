@@ -1,4 +1,4 @@
-import { Modal, Button, Form } from 'react-bootstrap';
+import { Modal, Button, Form, Image } from 'react-bootstrap';
 import React, { Component } from 'react';
 import { connectModal } from 'redux-modal';
 
@@ -22,6 +22,7 @@ export default connectModal({ name: 'ProductModal' })(class ProductModal extends
 
                 </Modal.Header>
                 <Modal.Body>
+                    <Image src={product.image} alt={`${product.name} image`}></Image>
                     <p dangerouslySetInnerHTML={{ __html: product.description }} />
                 </Modal.Body>
                 <Modal.Footer>
@@ -31,7 +32,6 @@ export default connectModal({ name: 'ProductModal' })(class ProductModal extends
                     </div>
                     <Form onSubmit={this.handleAddToCart} inline>
                         <Form.Group>
-
                             <Form.Control disabled={product.stock_status === "Unvailable" ? true : false} name="quantity" min="1" max={product.quantity} type="number" />
                             <Button disabled={product.stock_status === "Unvailable" ? true : false} type="submit" variant={product.quantity > 0 ? "outline-success" : "outline-secondary"} >
                                 Add to cart

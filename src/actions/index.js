@@ -43,22 +43,7 @@ export const getProducts = () => Zid.get()
         /* Using ES2019/ES10 flatMap function
         * Babel will transpile and polyfill
         */
-        const products = [
-            data.layout.body.recent_products
-        ].flatMap((p, i) => {
-            if (i === 0) {
-                p = p.map(np => {
-                    np.type = 'hot';
-                    return np;
-                });
-            } else {
-                p = p.map(np => {
-                    np.type = 'recent';
-                    return np;
-                });
-            }
-            return p;
-        });
+        const products = [data.layout.body.recent_products].flatMap((p, i) => p);
 
         return {
             type: GET_PRODUCTS,
