@@ -37,6 +37,18 @@
     text-align: left;
 }
 
+.Product_name {
+    color: #8f61af;
+}
+
+.Product_price {
+    color: #f5d76e;
+}
+
+.card {
+    height: 455.75px;
+}
+
 @media only screen and (max-width: 1199px) {
     .Product_add-cart {
         margin-left: 0.5rem;

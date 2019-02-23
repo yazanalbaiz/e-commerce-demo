@@ -18,24 +18,24 @@ export default connectModal({ name: 'ProductModal' })(class ProductModal extends
         return (
             <Modal show={show} onHide={handleHide}>
                 <Modal.Header closeButton>
-                    <Modal.Title>{product.name}</Modal.Title>
+                    <Modal.Title className="Product_name">{product.name}</Modal.Title>
 
                 </Modal.Header>
                 <Modal.Body>
                     <Image src={product.image} alt={`${product.name} image`}></Image>
                     <p dangerouslySetInnerHTML={{ __html: product.description }} />
                     {isNaN(Date.parse(new Date(product.updated_at.date))) ? '' :
-                                            <div>
-                                                Updated: {
-                                                    parseInt((((new Date(Date.now())) - (new Date(product.updated_at.date))) / (1000 * 60 * 60 * 24)).toFixed(0))
-                                                } Days ago
+                        <div>
+                            Updated: {
+                                parseInt((((new Date(Date.now())) - (new Date(product.updated_at.date))) / (1000 * 60 * 60 * 24)).toFixed(0))
+                            } Days ago
                                             </div>
                     }
                 </Modal.Body>
                 <Modal.Footer>
                     <div className="mr-auto">
                         {product.old_price > 0 ? <p className="strikethrough">{product.old_price} SAR</p> : ''}
-                        {product.price} SAR
+                        <p className="Product_price">{product.price} SAR</p>
                     </div>
                     <Form onSubmit={this.handleAddToCart} inline>
                         <Form.Group>

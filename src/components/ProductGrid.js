@@ -18,11 +18,9 @@ export default props => {
                                     </div>
                                 ) : ''}
                                 <Card.Body>
-                                    <Card.Title>
+                                    <Card.Title className="Product_name">
                                         {p.name}  {p.added ? <Badge className="ml-auto" variant="info"><i className="fas fa-cart-arrow-down"></i></Badge> : ''}
                                     </Card.Title>
-                                    <Card.Text className="product_card" dangerouslySetInnerHTML={{ __html: p.description }}>
-                                    </Card.Text>
                                     {isNaN(Date.parse(new Date(p.updated_at.date))) ? '' :
                                         <div>
                                             Updated: {
@@ -30,10 +28,12 @@ export default props => {
                                             } Days ago
                                         </div>
                                     }
-                                    
+
                                     <div>
                                         {p.old_price > 0 ? <span className="strikethrough mr-2">{p.old_price} SAR</span> : ''}
-                                        {p.price}<strong> SAR</strong>
+                                        <p className="Product_price">
+                                            {p.price}<strong> SAR</strong>
+                                        </p>
                                     </div>
                                     <div>
                                         <Button onClick={() => props.showModal(`ProductModal`, { product: p })} variant={p.stock_status === 'Unvailable' ? 'outline-secondary' : 'outline-primary'}>

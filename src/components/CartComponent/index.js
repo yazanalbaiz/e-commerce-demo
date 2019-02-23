@@ -46,7 +46,7 @@ export default class CartComponent extends Component {
                                         <Col>
                                             <p>{c.name}</p>
                                         </Col>
-                                        <Col><p>{c.price * c.quantity} SAR</p></Col>
+                                        <Col><p className="Product_price">{c.price * c.quantity} SAR</p></Col>
                                         <Col>
                                             <ButtonGroup>
                                                 <Button onClick={() => this.props.decreaseQuantity(c)} variant="outline-secondary">-</Button>
@@ -64,7 +64,7 @@ export default class CartComponent extends Component {
                     </Col>
                 </Row>
                 <Row className="mt-4">
-                    <Col>
+                    <Col className="Product_price">
                         <strong>Total: </strong>{cart.length > 0 ? `${this.calculateSum()} SAR` : <strong> Cart Empty</strong>}
                     </Col>
                 </Row>
