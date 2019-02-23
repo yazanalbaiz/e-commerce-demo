@@ -31,7 +31,12 @@ export default (state = {}, action) => {
 
             if (action.payload.quantity > action.payload.minimum) {
                 return state.map(c => {
-                    if (c.id === action.payload.id && c.quantity > 0) c.quantity--;
+                    if (c.id === action.payload.id && c.quantity > 0) {
+                        c.quantity--;
+                        if (c.quantity === 0) {
+                            c.added = false;
+                        }
+                    }
                     return c;
                 });
             } else {

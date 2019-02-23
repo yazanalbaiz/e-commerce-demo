@@ -56,7 +56,7 @@ export default (state = {}, action) => {
 
                 return state.map(c => {
                     if (c.id === action.payload.id) {
-
+                        if (action.payload.quantity === c.minimum) c.added = false;
                         c.quantity++;
                         if (action.payload.quantity === c.minimum) c.quantity += action.payload.quantity;
                         if (c.quantity > 0) c.stock_status = 'Available';
