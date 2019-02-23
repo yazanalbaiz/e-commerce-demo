@@ -60,7 +60,6 @@ export default (state = {}, action) => {
                         c.quantity++;
                         if (action.payload.quantity === c.minimum) c.quantity += action.payload.quantity;
                         if (c.quantity > 0) c.stock_status = 'Available';
-                        console.log(c);
 
                     }
 
