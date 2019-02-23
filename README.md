@@ -49,6 +49,9 @@ Upon running the command `npm run dev`, the npm script will run the proxy server
 
 - Node.js
 - NPM
+- A browser extension that allows CORS, such as:
+  - [Allow-Control-Allow-Origin](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en)
+  - [Allow CORS](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en)
 
 ---
 
@@ -57,8 +60,9 @@ Upon running the command `npm run dev`, the npm script will run the proxy server
 ---
 
 1.  Clone or Download this repo.
-2.  Open your terminal and navigate to the repo's directory on your machine.
-3.  Run `npm install` to install all dependancy packages.
-4.  Run `npm run dev` to launch the api and app.
+2.  Make sure you have installed a CORS extension.
+3.  Open your terminal and navigate to the repo's directory on your machine.
+4.  Run `npm install` to install all dependancy packages.
+5.  Run `npm run dev` to launch the api and app.
 
 ---
