@@ -24,7 +24,8 @@ export default (state = {}, action) => {
             });
 
         case DECREASE_QUANTITY:
-            if (action.payload.quantity > 1) {
+
+            if (action.payload.quantity > action.payload.minimum) {
                 return state.map(c => {
                     if (c.id === action.payload.id && c.quantity > 0) c.quantity--;
                     return c;
@@ -32,7 +33,6 @@ export default (state = {}, action) => {
             } else {
                 return state.filter(c => c.id !== action.payload.id);
             }
-
         case REMOVE_FROM_CART:
             return state.filter(c => c.id !== action.payload.id);
         default:

@@ -37,7 +37,7 @@ export default props => {
                                     </div>
                                     <div>
                                         <Button onClick={() => props.showModal(`ProductModal`, { product: p })} variant={p.stock_status === 'Unvailable' ? 'outline-secondary' : 'outline-primary'}>
-                                            {p.stock_status === 'Unvailable' ? 'Out of stock' : 'Item Details'}
+                                            {p.stock_status === 'Unvailable' || p.quantity < 1 ? 'Out of stock' : 'Item Details'}
                                         </Button>
                                         {p.stock_status === 'Available' ? (
                                             <Button onClick={() => props.addToCart(p, p.minimum)} className="Product_add-cart" variant="outline-success">

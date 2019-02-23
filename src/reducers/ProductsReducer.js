@@ -53,8 +53,12 @@ export default (state = {}, action) => {
             if (Object.keys(state).length > 0) {
 
                 return state.map(c => {
-                    if (c.id === action.payload.id) c.quantity++;
-                    if (c.quantity > 0) c.stock_status = 'Available';
+                    if (c.id === action.payload.id) {
+                        c.quantity++;
+                        if (action.payload.quantity === c.minimum) c.quantity += action.payload.quantity;
+                        if (c.quantity > 0) c.stock_status = 'Available';
+                    }
+
                     return c;
                 });
             } else {
