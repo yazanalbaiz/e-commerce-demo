@@ -63,7 +63,7 @@ export default class CartComponent extends Component {
                         </ListGroup>
                     </Col>
                 </Row>
-                <Row>
+                <Row className="mt-4">
                     <Col>
                         <strong>Total: </strong>{cart.length > 0 ? `${this.calculateSum()} SAR` : <strong> Cart Empty</strong>}
                     </Col>

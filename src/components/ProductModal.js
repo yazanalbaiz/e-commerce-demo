@@ -24,6 +24,13 @@ export default connectModal({ name: 'ProductModal' })(class ProductModal extends
                 <Modal.Body>
                     <Image src={product.image} alt={`${product.name} image`}></Image>
                     <p dangerouslySetInnerHTML={{ __html: product.description }} />
+                    {isNaN(Date.parse(new Date(product.updated_at.date))) ? '' :
+                                            <div>
+                                                Updated: {
+                                                    parseInt((((new Date(Date.now())) - (new Date(product.updated_at.date))) / (1000 * 60 * 60 * 24)).toFixed(0))
+                                                } Days ago
+                                            </div>
+                    }
                 </Modal.Body>
                 <Modal.Footer>
                     <div className="mr-auto">
@@ -32,7 +39,7 @@ export default connectModal({ name: 'ProductModal' })(class ProductModal extends
                     </div>
                     <Form onSubmit={this.handleAddToCart} inline>
                         <Form.Group>
-                            <Form.Control disabled={product.stock_status === "Unvailable" ? true : false} name="quantity" min="1" max={product.quantity} type="number" />
+                            <Form.Control disabled={product.stock_status === "Unvailable" ? true : false} name="quantity" min={product.minimum} max={product.quantity} type="number" />
                             <Button disabled={product.stock_status === "Unvailable" ? true : false} type="submit" variant={product.quantity > 0 ? "outline-success" : "outline-secondary"} >
                                 Add to cart
                             </Button>

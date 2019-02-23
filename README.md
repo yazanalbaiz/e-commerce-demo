@@ -41,6 +41,14 @@ I have chosen to serve the `data.json` with a Node.js server proxy that will run
 I have done so because I've found no native way in JavaScript to open a local file.
 
 Upon running the command `npm run dev`, the npm script will run the proxy server and launch the react dev server.
+---
+
+## Requirements
+
+---
+
+- Node.js
+- NPM
 
 ---
 
