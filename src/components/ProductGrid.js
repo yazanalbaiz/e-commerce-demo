@@ -1,16 +1,9 @@
 import React from 'react';
-import { Row, Col, Card, Button } from 'react-bootstrap';
-import ProductModal from './ProductModal';
-
-
-
-
-
+import { Row, Col, Card, Button, Badge } from 'react-bootstrap';
 
 export default props => {
     let columns = [];
     props.products.forEach((p, idx) => {
-
         // push column
         columns.push(
             <Col lg={3} md={4} sm={6} xs={12} key={idx}>
@@ -22,12 +15,17 @@ export default props => {
                         </div>
                     ) : ''}
                     <Card.Body>
-                        <Card.Title>{p.name}</Card.Title>
+                        <Card.Title>
+                            {p.name}  {p.added ? <Badge className="ml-auto" variant="info"><i className="fas fa-cart-arrow-down"></i></Badge> : ''}
+                        </Card.Title>
                         <Card.Text className="product_card" dangerouslySetInnerHTML={{ __html: p.description }}>
                         </Card.Text>
-                        <div>{p.price}<strong> SAR</strong></div>
                         <div>
-                            <Button onClick={() => props.showModal('ProductModal', { product: p })} variant={p.stock_status === 'Unvailable' ? 'outline-secondary' : 'outline-primary'}>
+                            {p.old_price > 0 ? <p className="strikethrough">{p.old_price} SAR</p> : ''}
+                            {p.price}<strong> SAR</strong>
+                        </div>
+                        <div>
+                            <Button onClick={() => props.showModal(`ProductModal`, { product: p })} variant={p.stock_status === 'Unvailable' ? 'outline-secondary' : 'outline-primary'}>
                                 {p.stock_status === 'Unvailable' ? 'Out of stock' : 'Item Details'}
                             </Button>
                             {p.stock_status === 'Available' ? (
@@ -39,7 +37,6 @@ export default props => {
 
                     </Card.Body>
                 </Card>
-                <ProductModal addToCart={props.addToCart} product={p} status={props.modalStatus} closeModal={props.closeModal} />
             </Col>
         )
 

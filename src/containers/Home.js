@@ -4,6 +4,7 @@ import { show } from 'redux-modal';
 
 import Products from '../components/Products';
 import ShopNav from '../components/ShopNav';
+import ProductModal from '../components/ProductModal';
 
 import * as Actions from '../actions';
 
@@ -16,8 +17,7 @@ const mapStateToProps = state =>
     ({
         products: state.products,
         cart: state.cart,
-        modalStatus: state.modalStatus,
-        session: state.session
+        session: state.session,
     })
     ;
 
@@ -25,10 +25,8 @@ const mapDispatchToProps = dispatch => ({
     getProducts: () => dispatch(Actions.getProducts()),
     getCart: session => dispatch(Actions.getCart(session)),
     addToCart: (item, quantity) => dispatch(Actions.addToCart(item, quantity)),
-    loadModal: item => dispatch(Actions.loadModal(item)),
-    closeModal: item => dispatch(Actions.closeModal(item)),
     showModal: (name, props) => dispatch(show(name, props)),
-    startSession: () => (Actions.startSession())
+    startSession: () => dispatch(Actions.startSession()),
 });
 export default connect(
     mapStateToProps,
@@ -41,12 +39,14 @@ export default connect(
     };
 
     render() {
-        const { products, addToCart, loadModal, closeModal, modalStatus, showModal } = this.props;
+        const { products, addToCart, showModal } = this.props;
         const productsCondition = products.length > 0;
         return (productsCondition) ? (
             <div>
                 <ShopNav page="home" />
-                <Products showModal={showModal} modalStatus={modalStatus} loadModal={loadModal} closeModal={closeModal} addToCart={addToCart} products={products} />
+                <Products showModal={showModal} addToCart={addToCart} products={products} />
+                <ProductModal addToCart={addToCart} />
+
             </div>
         ) : <div>
                 <ShopNav page="home" />

@@ -7,19 +7,9 @@ export const START_SESSION = 'START_SESSION';
 export const INCREASE_QUANTITY = 'INCREASE_QUANTITY';
 export const DECREASE_QUANTITY = 'DECREASE_QUANTITY';
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
-export const LOAD_MODAL = 'LOAD_MODAL';
-export const CLOSE_MODAL = 'CLOSE_MODAL';
 
-export const loadModal = item => {
-    return ({
-        type: LOAD_MODAL,
-        payload: { ...item, status: true }
-    })
-};
-
-export const closeModal = item => ({
-    type: CLOSE_MODAL,
-    payload: { ...item, status: false }
+export const modal = () => ({
+    type: 'MODAL'
 });
 
 export const addToCart = (item, quantity) => ({
@@ -32,7 +22,6 @@ export const startSession = () => ({
 });
 
 export const increaseQuantity = (item, products) => {
-    console.log(products)
     return ({
         type: INCREASE_QUANTITY,
         payload: { ...item, products }

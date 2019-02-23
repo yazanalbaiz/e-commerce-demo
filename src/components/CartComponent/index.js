@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ListGroup, Container, Image, Button, Row, Col, InputGroup, FormControl, ButtonGroup } from 'react-bootstrap';
+import { ListGroup, Container, Image, Button, Row, Col, ButtonGroup } from 'react-bootstrap';
 
 import './style.css';
 

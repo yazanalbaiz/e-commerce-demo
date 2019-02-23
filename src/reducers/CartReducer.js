@@ -2,7 +2,6 @@ import { GET_CART, ADD_TO_CART, INCREASE_QUANTITY, DECREASE_QUANTITY, REMOVE_FRO
 export default (state = {}, action) => {
     switch (action.type) {
         case GET_CART:
-            console.log(state)
             if (!action.payload.session) {
                 return action.payload.cart;
             }

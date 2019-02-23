@@ -10,11 +10,11 @@ import './style.css';
 export default class index extends Component {
 
     render() {
-        const { products, addToCart, loadModal, closeModal, modalProduct, showModal } = this.props;
+        const { products, modalNumber, addToCart, loadModal, closeModal, modalProduct, showModal } = this.props;
 
         return (
             <Container className="padding">
-                <ProductGrid showModal={showModal} modalProduct={modalProduct} loadModal={loadModal} closeModal={closeModal} addToCart={addToCart} products={products} />
+                <ProductGrid modalNumber={modalNumber} showModal={showModal} modalProduct={modalProduct} loadModal={loadModal} closeModal={closeModal} addToCart={addToCart} products={products} />
             </Container>
         )
     }

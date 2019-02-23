@@ -9,3 +9,6 @@
    padding-bottom: 2rem; 
 }
 
+.strikethrough {
+   text-decoration: line-through;
+}
