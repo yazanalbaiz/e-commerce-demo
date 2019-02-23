@@ -40,7 +40,14 @@ export default props => {
                                             {p.stock_status === 'Unvailable' || p.quantity < 1 ? 'Out of stock' : 'Item Details'}
                                         </Button>
                                         {p.stock_status === 'Available' ? (
-                                            <Button onClick={() => props.addToCart(p, p.minimum)} className="Product_add-cart" variant="outline-success">
+                                            <Button onClick={() => {
+                                                if (p.added) {
+                                                    props.addToCart(p, 1);
+                                                } else {
+                                                    props.addToCart(p, p.minimum);
+
+                                                }
+                                            }} className="Product_add-cart" variant="outline-success">
                                                 <i className="fas fa-cart-plus"></i>
                                             </Button>
                                         ) : ''}

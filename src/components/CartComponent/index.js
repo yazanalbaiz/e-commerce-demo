@@ -6,7 +6,7 @@ import './style.css';
 export default class CartComponent extends Component {
 
     calculateSum = () => {
-        const { cart } = this.props;
+        const { cart, products } = this.props;
         const prices = cart.map(c => (c.price * c.quantity));
 
         return prices.reduce((t, p) => t + p);

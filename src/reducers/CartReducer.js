@@ -19,7 +19,11 @@ export default (state = {}, action) => {
             }
         case INCREASE_QUANTITY:
             return state.map(c => {
-                if (c.id === action.payload.id) c.quantity++;
+                const product = action.payload.products.find(p => p.id === action.payload.id);
+
+                if (c.id === action.payload.id && product.quantity > 0) {
+                    c.quantity++
+                };
                 return c;
             });
 

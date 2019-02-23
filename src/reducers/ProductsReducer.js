@@ -41,8 +41,10 @@ export default (state = {}, action) => {
         case INCREASE_QUANTITY:
             if (Object.keys(state).length > 0) {
                 return state.map(c => {
-                    if (c && c.id === action.payload.id && c.quantity !== 0) c.quantity--;
-                    if (c.quantity === 0) c.stock_status = 'Unvailable';
+                    if (c.id === action.payload.id && c.quantity > 0) {
+                        c.quantity--;
+                        if (c.quantity === 0) c.stock_status = 'Unvailable';
+                    }
                     return c;
                 });
             } else {
@@ -54,9 +56,12 @@ export default (state = {}, action) => {
 
                 return state.map(c => {
                     if (c.id === action.payload.id) {
+
                         c.quantity++;
                         if (action.payload.quantity === c.minimum) c.quantity += action.payload.quantity;
                         if (c.quantity > 0) c.stock_status = 'Available';
+                        console.log(c);
+
                     }
 
                     return c;

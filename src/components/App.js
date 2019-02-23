@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
 import Home from '../containers/Home';
@@ -14,7 +14,9 @@ class App extends Component {
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/" component={Home} />
         </Switch>
-        <ToastContainer hideProgressBar />
+        <Link to="/cart">
+          <ToastContainer hideProgressBar />
+        </Link>
       </div>
     );
   }
