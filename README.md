@@ -5,11 +5,7 @@
 
 This is my submission of the Zid front-end task.
 
-<div class="repo-badge">
-      <a href="#" id="status-image-popup" title="Latest push build on default branch: passed" name="status-images" class="open-popup" data-ember-action="" data-ember-action-54="54">
-        <img src="https://travis-ci.org/yazanalbaiz/zid-frontend-task.svg?branch=master" alt="build:passed">
-      </a>
-    </div>
+[![Build Status](https://travis-ci.org/yazanalbaiz/zid-frontend-task.svg?branch=master)](https://travis-ci.org/yazanalbaiz/zid-frontend-task)
 
 ---
 
