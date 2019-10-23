@@ -9,8 +9,6 @@
 
 ## The Criteria
 
----
-
 Implement a store home page that can mostly be altered dynamically through JSON payload
 returned by the server. An example of the json is attached in data.json.
 * You should be able to add products to cart, and products that are already in cart should be
@@ -32,8 +30,6 @@ marked.
 
 ## Implementation Comments
 
----
-
 I have chosen to serve the `data.json` with a Node.js server proxy that will run on port 3001.
 
 I have done so because I've found no native way in JavaScript to open a local file.
@@ -44,8 +40,6 @@ Upon running the command `npm run dev`, the npm script will run the proxy server
 
 ## Requirements
 
----
-
 - Node.js
 - NPM
 <!-- - A browser extension that allows CORS, such as:
@@ -55,8 +49,6 @@ Upon running the command `npm run dev`, the npm script will run the proxy server
 ---
 
 ## Installation
-
----
 <!-- 2.  Make sure you have installed a CORS extension. -->
 
 1.  Clone or Download this repo.
