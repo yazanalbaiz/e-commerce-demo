@@ -3,7 +3,7 @@
     Basic E-Commerce Website Demo
 </h1>
 
-[![Build Status](https://travis-ci.org/yazanalbaiz/zid-frontend-task.svg?branch=master)](https://travis-ci.org/yazanalbaiz/zid-frontend-task)
+[![Build Status](https://travis-ci.org/yazanalbaiz/e-commerce-demo.svg?branch=master)](https://travis-ci.org/yazanalbaiz/e-commerce-demo)
 
 ---
 
