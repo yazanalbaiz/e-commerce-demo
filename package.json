@@ -1,7 +1,7 @@
 {
-  "name": "zid-frontend-task",
+  "name": "e-commerce-demo",
   "version": "1.0.0",
-  "repository": "https://github.com/yazanalbaiz/zid-frontend-task/",
+  "repository": "https://github.com/yazanalbaiz/e-commerce-demo/",
   "license": "MIT",
   "private": false,
   "proxy": "http://localhost:3001",
