@@ -1,15 +1,13 @@
 
 <h1 style="line-height:100px">
-    Zid's Front-End Task by Yazan
+    Basic E-Commerce Website Demo
 </h1>
-
-This is my submission of the Zid front-end task.
 
 [![Build Status](https://travis-ci.org/yazanalbaiz/zid-frontend-task.svg?branch=master)](https://travis-ci.org/yazanalbaiz/zid-frontend-task)
 
 ---
 
-## The Task
+## The Criteria
 
 ---
 
