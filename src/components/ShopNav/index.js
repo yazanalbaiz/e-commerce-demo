@@ -9,7 +9,7 @@ export default class ShopNav extends Component {
             <Navbar className="ShopNav" sticky="top" bg="light" expand="sm">
                 <Link to="/">
                     <Navbar.Brand>
-                        <Image className="ShopNav_image" src={require('../../static/img/Zid.jpg')} fluid roundedCircle />
+                        <Image className="ShopNav_image" src={require('../../static/img/shop.png')} fluid roundedCircle />
                     </Navbar.Brand>
                 </Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
